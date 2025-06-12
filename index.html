@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candle Bar - Découvrez Votre Profil Olfactif</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen relative">
+  <div class="floating-elements">
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+  </div>
+
+  <!-- Login Section -->
+  <section id="loginSection" class="min-h-screen flex items-center justify-center p-4 section-transition">
+    <div class="w-full max-w-md">
+      <div class="text-center mb-8">
+        <div class="logo-container mb-6">
+          <div class="logo-glow"></div>
+          <img src="assets/logo_transp.png" alt="Candle Bar Logo" class="w-20 h-20 mx-auto relative z-10" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="w-20 h-20 mx-auto bg-gradient-to-br from-gold-light to-gold-dark rounded-full flex items-center justify-center text-white font-bold text-2xl" style="display: none;">CB</div>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-charcoal mb-4 fade-in-up">
+          Candle Bar
+        </h1>
+        <p class="text-soft-gray text-lg mb-8 fade-in-up" style="animation-delay: 0.2s;">
+          Découvrez votre signature olfactive unique
+        </p>
+      </div>
+
+      <div class="glass-effect rounded-3xl p-8 fade-in-up" style="animation-delay: 0.4s;">
+        <h2 class="text-2xl font-display font-semibold text-charcoal mb-6 text-center">
+          Commencez votre voyage sensoriel
+        </h2>
+        
+        <form id="loginForm">
+          <div class="input-group">
+            <input type="text" id="userName" class="input-field" placeholder=" " required>
+            <label for="userName" class="input-label">Votre prénom</label>
+          </div>
+          
+          <div class="input-group">
+            <input type="email" id="userEmail" class="input-field" placeholder=" " required>
+            <label for="userEmail" class="input-label">Votre adresse email</label>
+          </div>
+          
+          <button type="submit" class="btn-primary w-full py-4 rounded-2xl text-lg font-semibold mt-4">
+            Découvrir mon profil olfactif
+          </button>
+        </form>
+        
+        <p class="text-sm text-soft-gray text-center mt-4">
+          Nous utiliserons votre email pour vous envoyer votre profil personnalisé
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section id="welcomeSection" class="hidden min-h-screen flex items-center justify-center p-4 section-transition">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="logo-container mb-8">
+        <div class="logo-glow"></div>
+        <img src="assets/logo_transp.png" alt="Candle Bar Logo" class="w-24 h-24 mx-auto relative z-10" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-gold-light to-gold-dark rounded-full flex items-center justify-center text-white font-bold text-3xl" style="display: none;">CB</div>
+      </div>
+      
+      <h1 class="text-5xl md:text-6xl font-display font-bold text-charcoal mb-6 fade-in-up">
+        Bienvenue <span id="welcomeName" class="text-gold-dark"></span>
+      </h1>
+      
+      <p class="text-xl text-soft-gray mb-8 leading-relaxed fade-in-up" style="animation-delay: 0.2s;">
+        Plongez dans un voyage sensoriel unique avec notre diagnostic olfactif inspiré des plus grands parfumeurs. 
+        Découvrez les notes qui révèlent votre personnalité.
+      </p>
+      
+      <div class="glass-effect rounded-3xl p-8 mb-8 fade-in-up" style="animation-delay: 0.4s;">
+        <h3 class="text-2xl font-display font-semibold text-charcoal mb-4">
+          6 questions pour révéler votre essence
+        </h3>
+        <p class="text-soft-gray mb-6">
+          Notre algorithme analyse vos préférences pour créer votre profil olfactif personnalisé
+        </p>
+        <div class="flex justify-center items-center space-x-8 text-sm text-soft-gray">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-gradient-to-br from-gold-light to-gold-medium rounded-full flex items-center justify-center text-white font-bold mb-2">5</div>
+            <span>Minutes</span>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-gradient-to-br from-gold-light to-gold-medium rounded-full flex items-center justify-center text-white font-bold mb-2">6</div>
+            <span>Questions</span>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-gradient-to-br from-gold-light to-gold-medium rounded-full flex items-center justify-center text-white font-bold mb-2">∞</div>
+            <span>Possibilités</span>
+          </div>
+        </div>
+      </div>
+      
+      <button id="startQuiz" class="btn-primary py-4 px-12 rounded-2xl text-xl font-semibold fade-in-up" style="animation-delay: 0.6s;">
+        Commencer le diagnostic
+      </button>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section id="quizSection" class="hidden min-h-screen flex items-center justify-center p-4 section-transition">
+    <div class="w-full max-w-3xl mx-auto">
+      <!-- Progress Bar -->
+      <div class="mb-8 flex items-center justify-center">
+        <div class="relative w-32 h-32">
+          <svg class="progress-ring w-32 h-32">
+            <circle
+              class="progress-ring-circle"
+              stroke="rgba(212, 175, 140, 0.2)"
+              stroke-width="6"
+              fill="transparent"
+              r="45"
+              cx="64"
+              cy="64"/>
+            <circle
+              id="progressCircle"
+              class="progress-ring-circle"
+              stroke="url(#progressGradient)"
+              stroke-width="6"
+              fill="transparent"
+              r="45"
+              cx="64"
+              cy="64"/>
+            <defs>
+              <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#F7E7CE"/>
+                <stop offset="50%" style="stop-color:#E8D5B7"/>
+                <stop offset="100%" style="stop-color:#D4AF8C"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span id="progressText" class="text-2xl font-bold text-charcoal">1/6</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question Container -->
+      <div class="profile-card p-8 md:p-12 mb-8">
+        <div id="quizContainer" class="fade-in-up"></div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="text-center">
+        <button id="nextQuestion" class="btn-primary py-4 px-12 rounded-2xl text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+          Question suivante
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section id="resultsSection" class="hidden min-h-screen flex items-center justify-center p-4 section-transition">
+    <div class="w-full max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-charcoal mb-4 fade-in-up">
+          Votre Profil Olfactif
+        </h2>
+        <p class="text-xl text-soft-gray fade-in-up" style="animation-delay: 0.2s;">
+          Découvrez votre signature parfumée unique
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="chart-container fade-in-up" style="animation-delay: 0.4s;">
+          <canvas id="radarChart" class="w-full h-64"></canvas>
+        </div>
+        
+        <div class="profile-card p-8 fade-in-up" style="animation-delay: 0.6s;">
+          <div id="profileResult"></div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button id="restartQuiz" class="btn-primary py-4 px-12 rounded-2xl text-lg font-semibold mr-4">
+          Recommencer
+        </button>
+        <button id="emailProfile" class="bg-white text-gold-dark border-2 border-gold-medium py-4 px-12 rounded-2xl text-lg font-semibold hover:bg-gold-light hover:text-white transition-all duration-300">
+          Recevoir par email
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-soft-gray text-sm relative z-10">
+    <div class="container mx-auto px-4">
+      <p>&copy; 2025 Candle Bar. Tous droits réservés. | Créé avec passion pour les amateurs de parfums</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
